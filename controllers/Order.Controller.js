@@ -7,7 +7,7 @@ const CreateOrder=async(req,res)=>{
       
         const saveOrder=new OrderModel({CartId:CartIds,UserID:UserId});
         await saveOrder.save();
-        await CartModel.findByIdAndDelete({_id:CartIds});
+       
         res.status(200).send({"msg":"order has been placed"})
     } catch (error) {
         console.log(error);
